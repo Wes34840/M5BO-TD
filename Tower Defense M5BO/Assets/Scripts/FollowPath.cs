@@ -7,10 +7,10 @@ public class FollowPath : MonoBehaviour
 
     private Nodes pathScript;
     private int nodeIndex;
-    public float moveSpeed = 1f;
+    private EnemyStats stats;
     void Start()
     {
-        
+        stats = GetComponent<EnemyStats>();
         pathScript = GameObject.Find("Path").GetComponent<Nodes>();
     }
 
@@ -24,6 +24,7 @@ public class FollowPath : MonoBehaviour
             return;
         }
         delta.Normalize();
-        transform.position += delta * Time.deltaTime;
+        transform.position += delta * (stats.moveSpeed/10) * Time.deltaTime;
+        stats.progress += Time.deltaTime;
     }
 }

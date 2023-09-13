@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -25,8 +26,8 @@ public class ShootProjectile : MonoBehaviour
         if (firingDelay <= 0 && targetScript.targetList.Count > 0)
         {
             firingDelay = towerStats.firingSpeed;
-
-            target = targetScript.targetList[0].transform;
+            GameObject[] firstPriority = targetScript.targetList.OrderBy(t => t.GetComponent<EnemyStats>().progress).ToArray();
+            target = firstPriority[0].transform;
 
             Vector3 dir = FindFiringDirection();
             Shoot(dir);

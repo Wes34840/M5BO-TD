@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class EnemyID : MonoBehaviour
 {
-    public Dictionary<int, GameObject> enemyIDList = new Dictionary<int, GameObject>();
-    void Start()
-    {
-        
-    }
 
-    
+    public GameObject[] EnemyIDList;
+
 }
