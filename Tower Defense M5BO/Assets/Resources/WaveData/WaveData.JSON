@@ -2,11 +2,44 @@
     "data":
     [
         {
+        },
+
+        {
             "waveStructure":
             [
                 {
                     "enemyID": 1,
-                    "count": 10,
+                    "count": 4,
+                    "spacing": 2,
+                    "delay": 0
+                }
+            ]
+        },
+
+        {
+            "waveStructure":
+            [
+                {
+                    "enemyID": 1,
+                    "count": 6,
+                    "spacing": 1,
+                    "delay": 0
+                }
+            ]
+        },
+
+        {
+            "waveStructure":
+            [
+                {
+                    "enemyID": 1,
+                    "count": 2,
+                    "spacing": 1,
+                    "delay": 3
+                },
+                {
+                    "enemyID": 2,
+                    "count": 3,
                     "spacing": 1,
                     "delay": 0
                 }

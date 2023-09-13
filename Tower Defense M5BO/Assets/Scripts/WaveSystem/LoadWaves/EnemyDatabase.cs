@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemylist : MonoBehaviour
+public class EnemyDatabase : MonoBehaviour
 {
 
-    public GameObject[] EnemyIDList;
+    public GameObject[] Enemies;
 
 }
