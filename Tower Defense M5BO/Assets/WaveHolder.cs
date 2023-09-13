@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class WaveHolder : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public LoadWaveJSON JSONLoader;
+    public List<WaveStructure> waves;
+    private void Start()
     {
-        
+        JSONLoader = GetComponent<LoadWaveJSON>();
+        waves = JSONLoader.LoadWave();
     }
 
     // Update is called once per frame
