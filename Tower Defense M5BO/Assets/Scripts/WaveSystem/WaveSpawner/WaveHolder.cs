@@ -13,18 +13,16 @@ public class WaveHolder : MonoBehaviour
     [SerializeField] internal bool waveIsActive;
     private void Start()
     {
+        spawner = GetComponent<WaveSpawner>();
         JSONLoader = GetComponent<LoadWaveJSON>();
         waves = JSONLoader.LoadWave();
     }
 
-    // Update is called once per frame
-    void Update()
-    { 
-
-    }
-
-    public void StartWave(WaveStructure wave)
+    internal void StartWave()
     {
+        waveIndex++;
+        waveIsActive = true;
+        WaveStructure wave = waves[waveIndex];
         spawner.InitWave(wave);
     }
 }
