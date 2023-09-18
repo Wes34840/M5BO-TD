@@ -6,4 +6,5 @@ public class GlobalData
 {
     internal static float playerHealth = 200;
     internal static float playerCash = 650;
+    internal static GameObject selectedTower;
 }
