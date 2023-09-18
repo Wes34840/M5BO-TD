@@ -9,7 +9,7 @@ public class WaveHolder : MonoBehaviour
 
     [SerializeField] private WaveSpawner spawner;
 
-    [SerializeField] private int waveIndex;
+    [SerializeField] internal int waveIndex;
     [SerializeField] internal bool waveIsActive;
     private void Start()
     {
