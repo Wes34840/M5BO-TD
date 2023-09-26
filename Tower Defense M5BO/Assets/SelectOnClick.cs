@@ -9,11 +9,17 @@ public class SelectOnClick : MonoBehaviour
     private BoxCollider2D hitBox;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private MenuControl menuControl;
+    [SerializeField] private float menuColl;
 
     void Start()
     {
         hitBox = GetComponent<BoxCollider2D>();
         menuControl = GameObject.Find("TowerMenu").GetComponent<MenuControl>();
+        float aspect = (float)Screen.width / Screen.height;
+
+        float worldHeight = Camera.main.orthographicSize/2;
+
+        menuColl = worldHeight * aspect * -1;
     }
 
     void Update()
@@ -22,16 +28,19 @@ public class SelectOnClick : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (hitBox == Physics2D.OverlapPoint(mousePosition) && GlobalData.selectedTower != gameObject)
+            if (GlobalData.selectedTower != null && mousePosition.x < menuColl)
+            {
+                return;
+            }
+            else if (hitBox == Physics2D.OverlapPoint(mousePosition) && GlobalData.selectedTower != gameObject)
             {
                 SelectTower();
                 return;
             }
-            else 
+            else
             {
                 DeselectTower();
             }
-
         }
 
     }
@@ -43,7 +52,6 @@ public class SelectOnClick : MonoBehaviour
         Color tmp = spriteRenderer.color;
         tmp.a = 0.4f;
         spriteRenderer.color = tmp; // make range visible
-        Debug.Log("Select");
         menuControl.OpenMenu();
     }
 
@@ -53,7 +61,6 @@ public class SelectOnClick : MonoBehaviour
         Color tmp = spriteRenderer.color;
         tmp.a = 0;
         spriteRenderer.color = tmp; // make range invisible
-        Debug.Log("Deselect");
         StartCoroutine(EndOfFrame());
 
     }
