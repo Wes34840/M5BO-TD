@@ -13,16 +13,14 @@ public class SpawnDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("Deez Nuts");
         draggableSpawner.SpawnDraggable(towerType);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("drag");
+
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("drag end");
     }
 }

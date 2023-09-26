@@ -33,6 +33,7 @@ public class DragNDrop : MonoBehaviour
     }
     private void PlaceTower()
     {
+        GlobalData.playerCash -= tower.transform.GetComponentInChildren<TowerStats>().cost;
         Instantiate(tower, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerStats : MonoBehaviour
-{ 
+{
     // Tower
     [SerializeField] internal float firingSpeed;
+    [SerializeField] internal float cost;
 
     // Projectile
     [SerializeField] internal float projectileDamage;
