@@ -1,5 +1,85 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &334367301434133305
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 342212812368073912}
+  - component: {fileID: 1434278414171720795}
+  m_Layer: 0
+  m_Name: Path2Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &342212812368073912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334367301434133305}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6680021658932610221}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1434278414171720795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334367301434133305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8106b364de58c349a4b12a77e1265ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canUpgrade: 1
+  opPath: {fileID: 783078188442380622}
+  upgrades:
+  - title: Keen Eye
+    description: Higher range and a small increase in pierce
+    cost: 100
+    sprite: {fileID: 0}
+    stats:
+    - 2
+    - 0
+    - 0
+    - 1
+    - 0
+    projectile: {fileID: 0}
+  - title: Triple Shot
+    description: Monkey now shoots 3 darts at once
+    cost: 500
+    sprite: {fileID: 21300000, guid: fcd7b37cb0985aa4abe78ed9af522966, type: 3}
+    stats:
+    - 2
+    - 0
+    - 2
+    - 0
+    - 2
+    projectile: {fileID: 261341230619180537, guid: 8f83437be60565344abec9b143a4f942, type: 3}
+  - title: Veteran
+    description: He has lost an eye, but he will never lose his spirit
+    cost: 1000
+    sprite: {fileID: 21300000, guid: 748fb967e7cb0174393c6da990e52cef, type: 3}
+    stats:
+    - 0
+    - 2
+    - 3
+    - 0
+    - 0
+    projectile: {fileID: 0}
 --- !u!1 &2287002326841866991
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,6 +337,7 @@ GameObject:
   - component: {fileID: 5709728926378866738}
   - component: {fileID: 5709728926378866739}
   - component: {fileID: 5709728926378866741}
+  - component: {fileID: 7929959232620486058}
   m_Layer: 0
   m_Name: Range
   m_TagString: Untagged
@@ -381,56 +462,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &5709728926545589770
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5709728926545589773}
-  - component: {fileID: 5709728926545589772}
-  m_Layer: 0
-  m_Name: StatObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5709728926545589773
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5709728926545589770}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5709728928319965316}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5709728926545589772
+--- !u!114 &7929959232620486058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5709728926545589770}
+  m_GameObject: {fileID: 5709728926378866737}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f50c2ad7cd78eb48b666dfff0e4b5fe, type: 3}
+  m_Script: {fileID: 11500000, guid: d1ebe8c77e276584797726ef76f36c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingSpeed: 1
-  cost: 0
-  projectileDamage: 1
-  projectilePierce: 1
-  projectileSpeed: 10
-  projectileDespawnTime: 5
 --- !u!1 &5709728927291910878
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +540,7 @@ Transform:
   - {fileID: 5709728926378866736}
   - {fileID: 7085309019403448396}
   - {fileID: 5709728926362275685}
-  - {fileID: 5709728926545589773}
+  - {fileID: 6680021658932610221}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -579,9 +622,139 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f50c2ad7cd78eb48b666dfff0e4b5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firingSpeed: 1
-  cost: 650
+  range: 5
+  firingSpeed: 5
+  cost: 200
   projectileDamage: 2
   projectilePierce: 2
-  projectileSpeed: 10
-  projectileDespawnTime: 2
+  projectileSpeed: 15
+  projectileDespawnTime: 1
+--- !u!1 &7987978154158140547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6680021658932610221}
+  - component: {fileID: 675363641938564756}
+  m_Layer: 0
+  m_Name: Upgrader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6680021658932610221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7987978154158140547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5249332644718196260}
+  - {fileID: 342212812368073912}
+  m_Father: {fileID: 5709728928319965316}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &675363641938564756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7987978154158140547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1f9ca0eb5ff6745bc9bafc8558994a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paths:
+  - {fileID: 783078188442380622}
+  - {fileID: 1434278414171720795}
+--- !u!1 &8607898953819914382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5249332644718196260}
+  - component: {fileID: 783078188442380622}
+  m_Layer: 0
+  m_Name: Path1Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5249332644718196260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8607898953819914382}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6680021658932610221}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &783078188442380622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8607898953819914382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8106b364de58c349a4b12a77e1265ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canUpgrade: 1
+  opPath: {fileID: 1434278414171720795}
+  upgrades:
+  - title: Basic Training
+    description: Increases range, attack speed and pierce
+    cost: 200
+    sprite: {fileID: 0}
+    stats:
+    - 1
+    - 2.5
+    - 0
+    - 1
+    - 0
+    projectile: {fileID: 0}
+  - title: Rage
+    description: Shoots even faster and does more damage
+    cost: 400
+    sprite: {fileID: 21300000, guid: b28d6ff5d43106749bc634cc268980d7, type: 3}
+    stats:
+    - 0
+    - 2.5
+    - 2
+    - 0
+    - 0
+    projectile: {fileID: 0}
+  - title: Midas Touch
+    description: Unlocks the power of the golden dart
+    cost: 800
+    sprite: {fileID: 21300000, guid: ce49a5dac78712547bbd91ec1748fabf, type: 3}
+    stats:
+    - 1
+    - 5
+    - 4
+    - 2
+    - 0
+    projectile: {fileID: 4187673704971544680, guid: 8fe20f3cd4cc4ad488187a9bada64919, type: 3}

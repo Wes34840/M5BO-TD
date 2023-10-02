@@ -6,7 +6,6 @@ public class TargetScript : MonoBehaviour
 {
 
     public List<GameObject> targetList = new List<GameObject>();
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))

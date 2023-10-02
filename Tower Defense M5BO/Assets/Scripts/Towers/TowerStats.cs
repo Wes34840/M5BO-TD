@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerStats : MonoBehaviour
 {
     // Tower
+    [SerializeField] internal float range;
     [SerializeField] internal float firingSpeed;
     [SerializeField] internal float cost;
 

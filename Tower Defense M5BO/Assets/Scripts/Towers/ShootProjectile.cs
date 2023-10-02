@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class ShootProjectile : MonoBehaviour
 {
 
-    [SerializeField] GameObject projectile;
+    [SerializeField] internal GameObject projectile;
     private TowerStats towerStats;
     public TargetScript targetScript;
-    private float firingDelay;
+    private float firingDelay = 0;
     private Transform target;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +24,7 @@ public class ShootProjectile : MonoBehaviour
         firingDelay -= Time.deltaTime;
         if (firingDelay <= 0 && targetScript.targetList.Count > 0)
         {
-            firingDelay = towerStats.firingSpeed;
+            firingDelay = 10/towerStats.firingSpeed;
             GameObject[] firstPriority = targetScript.targetList.OrderBy(t => t.GetComponent<EnemyStats>().progress).ToArray();
             target = firstPriority[0].transform;
 
@@ -43,17 +42,18 @@ public class ShootProjectile : MonoBehaviour
     private void Shoot(Vector3 dir)
     {
         GameObject firedProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
-        ProjectileScript projectileScript = firedProjectile.GetComponent<ProjectileScript>();
-        projectileScript.direction = dir;
-        firedProjectile.transform.right = target.position - transform.position;
-        ApplyProjectileStats(projectileScript);
+        ProjectileStats projectileStats = firedProjectile.GetComponent<ProjectileStats>();
+        ApplyProjectileStats(projectileStats, dir);
+        
 
     }
-    private void ApplyProjectileStats(ProjectileScript p)
+    private void ApplyProjectileStats(ProjectileStats p, Vector3 dir)
     {
         p.damage = towerStats.projectileDamage;
         p.pierce = towerStats.projectilePierce;
         p.speed = towerStats.projectileSpeed;
         p.despawnTime = towerStats.projectileDespawnTime;
+        p.direction = dir;
+        p.target = target;
     }
 }
