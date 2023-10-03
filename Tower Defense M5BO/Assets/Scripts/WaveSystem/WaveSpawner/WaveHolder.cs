@@ -25,4 +25,10 @@ public class WaveHolder : MonoBehaviour
         WaveStructure wave = waves[waveIndex];
         spawner.InitWave(wave);
     }
+
+    internal void FinishWave()
+    {
+        waveIsActive = false;
+        GlobalData.playerCash += waves[waveIndex].endCash;
+    }
 }

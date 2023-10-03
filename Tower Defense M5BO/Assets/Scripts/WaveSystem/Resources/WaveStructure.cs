@@ -7,9 +7,11 @@ using UnityEngine;
 public class WaveStructure
 {
     public List<WavePart> waveStructure;
+    public float endCash;
 
-    public WaveStructure(List<WavePart> waveStructure)
+    public WaveStructure(List<WavePart> waveStructure, float endCash)
     {
         this.waveStructure = waveStructure;
+        this.endCash = endCash;
     }
 }

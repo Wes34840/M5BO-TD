@@ -13,7 +13,8 @@
                     "spacing": 3,
                     "delay": 0
                 }
-            ]
+            ],
+            "endCash": 60
         },
 
         {
@@ -25,7 +26,21 @@
                     "spacing": 5,
                     "delay": 0
                 }
-            ]
+            ],
+            "endCash": 80
+        },
+        
+        {
+            "waveStructure":
+            [
+                {
+                    "enemyID": 1,
+                    "count": 10,
+                    "spacing": 4,
+                    "delay": 0
+                }
+            ],
+            "endCash": 100
         },
 
         {
@@ -33,17 +48,50 @@
             [
                 {
                     "enemyID": 1,
-                    "count": 2,
+                    "count": 8,
                     "spacing": 3,
                     "delay": 3
                 },
                 {
                     "enemyID": 2,
-                    "count": 3,
-                    "spacing": 1,
+                    "count": 10,
+                    "spacing": 2,
                     "delay": 0
                 }
-            ]
+            ],
+            "endCash": 120
+        },
+        
+        {
+            "waveStructure":
+            [
+                {
+                    "enemyID": 3,
+                    "count": 8,
+                    "spacing": 5,
+                    "delay": 0
+                }
+            ],
+            "endCash": 120
+        },
+        
+        {
+            "waveStructure":
+            [
+                {
+                    "enemyID": 3,
+                    "count": 6,
+                    "spacing": 5,
+                    "delay": 3
+                },
+                {
+                    "enemyID": 1,
+                    "count": 6,
+                    "spacing": 3,
+                    "delay": 0
+                }
+            ],
+            "endCash": 120
         }
     ]
 }

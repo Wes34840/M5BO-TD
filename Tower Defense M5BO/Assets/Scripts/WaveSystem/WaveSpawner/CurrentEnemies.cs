@@ -22,7 +22,8 @@ public class CurrentEnemies : MonoBehaviour
     {
         if (currentEnemies.Count == 0 && spawner.finishedSpawning)
         {
-            GetComponentInParent<WaveHolder>().waveIsActive = false;
+
+            GetComponentInParent<WaveHolder>().FinishWave();
         }
     }
 
@@ -30,4 +31,5 @@ public class CurrentEnemies : MonoBehaviour
     {
         currentEnemies.Clear();
     }
+
 }

@@ -45,7 +45,7 @@ public class SelectOnClick : MonoBehaviour
 
     }
 
-    private void SelectTower()
+    internal void SelectTower()
     {
         GlobalData.selectedTower = transform.parent.gameObject;
         selectionSquare.SetActive(true);

@@ -20,6 +20,7 @@ public class RemoveOnDeath : MonoBehaviour
                                                    // player is granted 4 cash but this takes away the excess cash
                                                    // (or at least, it should)
             Destroy(gameObject);
+            GetComponentInChildren<ShowEnemyHealth>().ClosePopup();
         }
     }
 }

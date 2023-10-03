@@ -18,7 +18,7 @@ public class FollowPath : MonoBehaviour
     void Update()
     {
         Vector3 delta = pathScript.pathNodes[nodeIndex].position - transform.position;
-        if (delta.magnitude <= 0.001)
+        if (delta.magnitude <= 0.02f)
         {
             nodeIndex++;
             return;
