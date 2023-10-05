@@ -25,7 +25,7 @@ public class ShootProjectile : MonoBehaviour
         if (firingDelay <= 0 && targetScript.targetList.Count > 0)
         {
             firingDelay = 10/towerStats.firingSpeed;
-            GameObject[] firstPriority = targetScript.targetList.OrderBy(t => t.GetComponent<EnemyStats>().progress).ToArray();
+            GameObject[] firstPriority = targetScript.targetList.OrderByDescending(t => t.GetComponent<EnemyStats>().progress).ToArray();
             target = firstPriority[0].transform;
 
             Vector3 dir = FindFiringDirection();

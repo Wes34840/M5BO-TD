@@ -7,5 +7,6 @@ public enum EnemyID
     None,
     Basic,
     Fast,
-    Slow
+    Slow,
+    Boss1
 }

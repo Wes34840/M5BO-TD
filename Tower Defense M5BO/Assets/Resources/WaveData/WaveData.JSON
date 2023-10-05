@@ -10,7 +10,7 @@
                 {
                     "enemyID": 1,
                     "count": 4,
-                    "spacing": 5,
+                    "spacing": 7,
                     "delay": 0
                 }
             ],
@@ -23,7 +23,7 @@
                 {
                     "enemyID": 1,
                     "count": 6,
-                    "spacing": 3,
+                    "spacing": 7,
                     "delay": 0
                 }
             ],
@@ -35,8 +35,8 @@
             [
                 {
                     "enemyID": 1,
-                    "count": 10,
-                    "spacing": 4,
+                    "count": 8,
+                    "spacing": 5,
                     "delay": 0
                 }
             ],
@@ -48,18 +48,50 @@
             [
                 {
                     "enemyID": 1,
-                    "count": 8,
-                    "spacing": 3,
-                    "delay": 3
+                    "count": 6,
+                    "spacing": 5,
+                    "delay": 30
                 },
                 {
                     "enemyID": 2,
+                    "count": 4,
+                    "spacing": 5,
+                    "delay": 0
+                }
+            ],
+            "endCash": 110
+        },
+        
+        {
+            "waveStructure":
+            [
+                {
+                    "enemyID": 2,
+                    "count": 6,
+                    "spacing": 6,
+                    "delay": 12
+                },
+                {
+                    "enemyID": 1,
                     "count": 5,
-                    "spacing": 2,
+                    "spacing": 5,
                     "delay": 0
                 }
             ],
             "endCash": 120
+        },
+
+        {
+            "waveStructure":
+            [
+                {
+                    "enemyID": 2,
+                    "count": 10,
+                    "spacing": 4,
+                    "delay": 0
+                }
+            ],
+            "endCash": 130
         },
         
         {
@@ -68,11 +100,11 @@
                 {
                     "enemyID": 3,
                     "count": 8,
-                    "spacing": 5,
+                    "spacing": 10,
                     "delay": 0
                 }
             ],
-            "endCash": 120
+            "endCash": 140
         },
         
         {
@@ -81,17 +113,105 @@
                 {
                     "enemyID": 3,
                     "count": 6,
-                    "spacing": 5,
-                    "delay": 3
+                    "spacing": 20,
+                    "delay": 120
                 },
                 {
                     "enemyID": 1,
                     "count": 6,
+                    "spacing": 4,
+                    "delay": 0
+                }
+            ],
+            "endCash": 150
+        },
+        
+        {
+            "waveStructure":
+            [
+                {
+                    "enemyID": 3,
+                    "count": 5,
+                    "spacing": 8,
+                    "delay": 40
+                },
+                {
+                    "enemyID": 1,
+                    "count": 8,
+                    "spacing": 6,
+                    "delay": 24
+                },
+                {
+                    "enemyID": 2,
+                    "count": 4,
                     "spacing": 3,
                     "delay": 0
                 }
             ],
-            "endCash": 120
+            "endCash": 155
+        },
+        
+        {
+            "waveStructure":
+            [
+                {
+                    "enemyID": 3,
+                    "count": 10,
+                    "spacing": 7,
+                    "delay": 70
+                },
+                {
+                    "enemyID": 4,
+                    "count": 1,
+                    "spacing": 1,
+                    "delay": 0
+                }
+            ],
+            "endCash": 175
+        },
+
+        {
+            "waveStructure":
+            [
+                {
+                    "enemyID": 3,
+                    "count": 8,
+                    "spacing": 7,
+                    "delay": 57
+                },
+                {
+                    "enemyID": 2,
+                    "count": 12,
+                    "spacing": 3,
+                    "delay": 0
+                }
+            ],
+            "endCash": 180
+        },
+
+        {
+            "waveStructure":
+            [
+                {
+                    "enemyID": 4,
+                    "count": 2,
+                    "spacing": 80,
+                    "delay": 5
+                },
+                {
+                    "enemyID": 1,
+                    "count": 12,
+                    "spacing": 4,
+                    "delay": 40
+                },
+                {
+                    "enemyID": 2,
+                    "count": 8,
+                    "spacing": 3,
+                    "delay": 0
+                }
+            ],
+            "endCash": 190
         }
     ]
 }
