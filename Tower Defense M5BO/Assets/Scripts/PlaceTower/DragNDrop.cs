@@ -6,9 +6,11 @@ public class DragNDrop : MonoBehaviour
 {
     bool isDragging;
     [SerializeField] internal GameObject tower;
+    private checkFootPrint check;
 
     void Start()
     {
+        check = GetComponentInChildren<checkFootPrint>();
         isDragging = true;
     }
 
@@ -26,7 +28,7 @@ public class DragNDrop : MonoBehaviour
             transform.position = new Vector3(mousePosition.x, mousePosition.y, -1);
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && check.isValid())
         {
             PlaceTower();
         }

@@ -9,12 +9,16 @@ public class Nodes : MonoBehaviour
 
     void Start()
     {
-        pathNodes = new Transform[transform.childCount];
+        InitPathNodes();
+    }
+    private void InitPathNodes()
+    {
+        Transform nodeHolder = transform.GetChild(0);
+        pathNodes = new Transform[nodeHolder.childCount];
 
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < nodeHolder.childCount; i++)
         {
-            pathNodes[i] = transform.GetChild(i);
+            pathNodes[i] = nodeHolder.GetChild(i);
         }
     }
-
 }

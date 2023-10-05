@@ -10,7 +10,7 @@
                 {
                     "enemyID": 1,
                     "count": 4,
-                    "spacing": 3,
+                    "spacing": 5,
                     "delay": 0
                 }
             ],
@@ -23,7 +23,7 @@
                 {
                     "enemyID": 1,
                     "count": 6,
-                    "spacing": 5,
+                    "spacing": 3,
                     "delay": 0
                 }
             ],
@@ -54,7 +54,7 @@
                 },
                 {
                     "enemyID": 2,
-                    "count": 10,
+                    "count": 5,
                     "spacing": 2,
                     "delay": 0
                 }
