@@ -11,8 +11,8 @@ public class UpdateUpgradeDescription : MonoBehaviour
         
     }
 
-    internal void UpdateDescription(GameObject tower, int index)
+    internal void UpdateDescription(GameObject tower, int index, int tier)
     {
-        GetComponent<TMP_Text>().text = tower.GetComponentInChildren<UpgradePathHolder>().paths[index].GetDescription();
+        GetComponent<TMP_Text>().text = tower.GetComponentInChildren<UpgradePathHolder>().paths[index].GetDescription(tier);
     }
 }

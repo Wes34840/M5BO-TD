@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,21 +33,23 @@ public class DisplayTowerMenu : MonoBehaviour
     private void UpdateButtons(GameObject tower)
     {
         UpgradePathHolder upgradeHolder = tower.GetComponentInChildren<UpgradePathHolder>();
-        for (int i = 0; i < upgradeHolder.paths.Length; i++ )
+        for (int i = 0; i < upgradeHolder.paths.Length; i++)
         {
-
-
+            int tier = upgradeHolder.paths[i].tier;
             if (upgradeHolder.paths[i].canUpgrade == false)
             {
-                pathDisplays[i].gameObject.transform.GetChild(2).GetComponent<Image>().color = new Color(0.3f, 0.3f, 0.3f, 1);
+                pathDisplays[i].gameObject.transform.GetChild(2).GetComponent<Image>().color = new Color(0.3f, 0.3f, 0.3f);
             }
-
+            else
+            {
+                pathDisplays[i].gameObject.transform.GetChild(2).GetComponent<Image>().color = new Color(1, 1, 1);
+            }
             if (upgradeHolder.paths[i].tier == 3)
             {
-                continue;
+                tier--;
             }
-
-            pathDisplays[i].transform.GetChild(2).GetComponentInChildren<TMP_Text>().text = $"${upgradeHolder.paths[i].GetUpgradeCost()}";
+            
+            pathDisplays[i].transform.GetChild(2).GetComponentInChildren<TMP_Text>().text = $"${upgradeHolder.paths[i].GetUpgradeCost(tier)}";
         }
     }
 
@@ -54,12 +57,12 @@ public class DisplayTowerMenu : MonoBehaviour
     {
         for (int i = 0; i < pathDisplays.Length; i++)
         {
-            if (tower.GetComponentInChildren<UpgradePathHolder>().paths[i].tier == 3)
-            {
-                continue;
-            }
-            pathDisplays[i].transform.GetChild(0).GetComponent<UpdateUpgradeTitle>().UpdateTitle(tower, i);
-            pathDisplays[i].transform.GetChild(1).GetComponent<UpdateUpgradeDescription>().UpdateDescription(tower, i);
+            int tier = tower.GetComponentInChildren<UpgradePathHolder>().paths[i].tier;
+
+            if (tier == 3) tier--;
+
+            pathDisplays[i].transform.GetChild(0).GetComponent<UpdateUpgradeTitle>().UpdateTitle(tower, i, tier);
+            pathDisplays[i].transform.GetChild(1).GetComponent<UpdateUpgradeDescription>().UpdateDescription(tower, i, tier);
         }
     }
 

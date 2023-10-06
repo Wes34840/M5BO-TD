@@ -13,6 +13,6 @@ public class UpdateLifeCounter : MonoBehaviour
 
     void Update()
     {
-        textField.text = $"Wave: {GlobalData.playerHealth}";
+        textField.text = $"Lives: {GlobalData.playerHealth}";
     }
 }

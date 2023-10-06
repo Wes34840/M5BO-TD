@@ -64,19 +64,19 @@ public class TowerUpgrader : MonoBehaviour
         GetComponentInParent<ShootProjectile>().projectile = proj;
     }
 
-    internal float GetUpgradeCost()
+    internal float GetUpgradeCost(int disTier)
     {
-        return upgrades[tier].cost;
+        return upgrades[disTier].cost;
     }
 
-    internal string GetTitle()
+    internal string GetTitle(int disTier)
     {
-        return upgrades[tier].title;
+        return upgrades[disTier].title;
     }
 
-    internal string GetDescription()
+    internal string GetDescription(int disTier)
     {
-        return upgrades[tier].description;
+        return upgrades[disTier].description;
     }
 
     private IEnumerator IfSpam()
@@ -87,11 +87,11 @@ public class TowerUpgrader : MonoBehaviour
         {
             opPath.canUpgrade = false;
         }
-        else if (tier == 1 && opPath.tier >= 2)
+        if (tier == 1 && opPath.tier >= 2)
         {
             canUpgrade = false;
         }
-        else if (tier == 3)
+        if (tier == 3)
         {
             canUpgrade = false;
         }

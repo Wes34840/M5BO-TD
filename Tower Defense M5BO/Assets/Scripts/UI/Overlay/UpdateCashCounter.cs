@@ -13,6 +13,6 @@ public class UpdateCashCounter : MonoBehaviour
 
     void Update()
     {
-        textField.text = $"Wave: {GlobalData.playerCash}";
+        textField.text = $"${GlobalData.playerCash}";
     }
 }

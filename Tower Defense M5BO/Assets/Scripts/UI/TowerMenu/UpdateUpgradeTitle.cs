@@ -10,8 +10,8 @@ public class UpdateUpgradeTitle : MonoBehaviour
         
     }
 
-    internal void UpdateTitle(GameObject tower, int index)
+    internal void UpdateTitle(GameObject tower, int index, int tier)
     {
-        GetComponent<TMP_Text>().text = tower.GetComponentInChildren<UpgradePathHolder>().paths[index].GetTitle();
+        GetComponent<TMP_Text>().text = tower.GetComponentInChildren<UpgradePathHolder>().paths[index].GetTitle(tier);
     }
 }
