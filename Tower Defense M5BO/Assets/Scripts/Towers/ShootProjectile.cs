@@ -11,11 +11,13 @@ public class ShootProjectile : MonoBehaviour
     public TargetScript targetScript;
     private float firingDelay = 0;
     private Transform target;
+    private UpdateLookDirection lookDir;
     // Start is called before the first frame update
     void Start()
     {
         towerStats = GetComponentInChildren<TowerStats>();
         targetScript = GetComponentInChildren<TargetScript>();    
+        lookDir = GetComponentInChildren<UpdateLookDirection>();
     }
 
     // Update is called once per frame
@@ -27,7 +29,6 @@ public class ShootProjectile : MonoBehaviour
             firingDelay = 10/towerStats.firingSpeed;
             GameObject[] firstPriority = targetScript.targetList.OrderByDescending(t => t.GetComponent<EnemyStats>().progress).ToArray();
             target = firstPriority[0].transform;
-
             Vector3 dir = FindFiringDirection();
             Shoot(dir);
         }
@@ -44,7 +45,8 @@ public class ShootProjectile : MonoBehaviour
         GameObject firedProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
         ProjectileStats projectileStats = firedProjectile.GetComponent<ProjectileStats>();
         ApplyProjectileStats(projectileStats, dir);
-        
+
+        lookDir.UpdateDirection(target.position);
 
     }
     private void ApplyProjectileStats(ProjectileStats p, Vector3 dir)

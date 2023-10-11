@@ -15,10 +15,7 @@ public class WaveButtonScript : MonoBehaviour
 
     public void OnClick()
     {
-        if (waveHolder.waveIsActive == false)
-        {
-            waveHolder.StartWave();
-        }
+        if (!waveHolder.waveIsActive && GlobalData.gameIsActive) waveHolder.StartWave();
     }
 
 

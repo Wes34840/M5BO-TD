@@ -20,7 +20,7 @@ public class FollowPath : MonoBehaviour
     void Update()
     {
         Vector3 delta = pathScript.pathNodes[nodeIndex].position - transform.position;
-        if (delta.magnitude <= 0.02f)
+        if (delta.magnitude <= 0.02f && nodeIndex != pathScript.pathNodes.Length-1)
         {
             nodeIndex++;
             lookDir.UpdateDirection(pathScript.pathNodes[nodeIndex].position);

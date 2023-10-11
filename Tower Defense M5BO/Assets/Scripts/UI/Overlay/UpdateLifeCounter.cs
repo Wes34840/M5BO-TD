@@ -13,6 +13,11 @@ public class UpdateLifeCounter : MonoBehaviour
 
     void Update()
     {
+        if (GlobalData.playerHealth <= 0)
+        {
+            textField.text = "Lives: 0";
+            return;
+        }
         textField.text = $"Lives: {GlobalData.playerHealth}";
     }
 }
