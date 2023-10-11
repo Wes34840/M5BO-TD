@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class DraggableSpawner : MonoBehaviour
@@ -8,15 +9,28 @@ public class DraggableSpawner : MonoBehaviour
     internal void SpawnDraggable(Draggables type)
     {
         GameObject tower = GetComponent<DragDropDatabase>().towers[(int)type];
-        TowerStats stats = tower.GetComponent<TowerStats>();
         
         if (tower.transform.GetComponentInChildren<TowerStats>().cost > GlobalData.playerCash) // check if player can afford the tower
         {
             return;
         }
         GameObject draggable = Instantiate(prefab, transform.position, Quaternion.identity);
-        draggable.GetComponent<SpriteRenderer>().sprite = tower.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
-        draggable.GetComponent<DragNDrop>().tower = tower;
-        draggable.transform.GetChild(1).transform.localScale = new Vector3(stats.range, stats.range, 1);
+
+        ApplyTowerToDraggable(draggable, tower);
+
+    }
+
+    private void ApplyTowerToDraggable(GameObject drag, GameObject tower)
+    {
+        TowerStats stats = tower.GetComponent<TowerStats>();
+
+        SpriteRenderer dragSprite = drag.transform.GetChild(2).GetComponent<SpriteRenderer>();
+        dragSprite.sprite = tower.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
+
+        dragSprite.transform.localScale = tower.transform.GetChild(3).localScale;
+        drag.transform.GetChild(0).localScale = tower.transform.GetChild(0).localScale;
+        drag.transform.GetChild(1).transform.localScale = new Vector3(stats.range, stats.range, 1);
+
+        drag.GetComponent<DragNDrop>().tower = tower;
     }
 }
