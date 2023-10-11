@@ -17,6 +17,6 @@ public class DraggableSpawner : MonoBehaviour
         GameObject draggable = Instantiate(prefab, transform.position, Quaternion.identity);
         draggable.GetComponent<SpriteRenderer>().sprite = tower.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
         draggable.GetComponent<DragNDrop>().tower = tower;
-        draggable.transform.GetChild(1).transform.localScale = new Vector3(3*stats.range, 3*stats.range, 1);
+        draggable.transform.GetChild(1).transform.localScale = new Vector3(stats.range, stats.range, 1);
     }
 }

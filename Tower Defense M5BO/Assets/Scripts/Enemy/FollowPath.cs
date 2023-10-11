@@ -8,10 +8,12 @@ public class FollowPath : MonoBehaviour
     private Nodes pathScript;
     private int nodeIndex;
     private EnemyStats stats;
+    UpdateLookDirection lookDir;
     void Start()
     {
         stats = GetComponent<EnemyStats>();
         pathScript = GameObject.Find("Path").GetComponent<Nodes>();
+        lookDir = GetComponent<UpdateLookDirection>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class FollowPath : MonoBehaviour
         if (delta.magnitude <= 0.02f)
         {
             nodeIndex++;
+            lookDir.UpdateDirection(pathScript.pathNodes[nodeIndex].position);
             return;
         }
         delta.Normalize();
