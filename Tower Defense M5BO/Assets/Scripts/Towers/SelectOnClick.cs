@@ -26,7 +26,7 @@ public class SelectOnClick : MonoBehaviour
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GlobalData.isPlacing)
         {
             if (GlobalData.selectedTower != null && mousePosition.x < menuColl)
             {

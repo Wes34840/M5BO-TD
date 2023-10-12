@@ -16,7 +16,7 @@ public class ShootProjectile : MonoBehaviour
     void Start()
     {
         towerStats = GetComponentInChildren<TowerStats>();
-        targetScript = GetComponentInChildren<TargetScript>();    
+        targetScript = GetComponentInChildren<TargetScript>();
         lookDir = GetComponentInChildren<UpdateLookDirection>();
     }
 
@@ -46,8 +46,7 @@ public class ShootProjectile : MonoBehaviour
         ProjectileStats projectileStats = firedProjectile.GetComponent<ProjectileStats>();
         ApplyProjectileStats(projectileStats, dir);
 
-        lookDir.UpdateDirection(target.position);
-
+        if (lookDir != null) lookDir.UpdateDirection(target.position);
     }
     private void ApplyProjectileStats(ProjectileStats p, Vector3 dir)
     {

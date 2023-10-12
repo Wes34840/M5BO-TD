@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8106b364de58c349a4b12a77e1265ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: 
   canUpgrade: 1
   opPath: {fileID: 783078188442380622}
   upgrades:
@@ -67,7 +68,7 @@ MonoBehaviour:
     - 0
     - 1
     - 0
-    - 2
+    - 0
     projectile: {fileID: 261341230619180537, guid: 8f83437be60565344abec9b143a4f942, type: 3}
   - title: Veteran
     description: He has lost an eye, but he will never lose his spirit
@@ -76,7 +77,7 @@ MonoBehaviour:
     stats:
     - 0
     - 2
-    - 3
+    - 2
     - 0
     - 0
     projectile: {fileID: 0}
@@ -249,7 +250,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5709728926362275685}
   - component: {fileID: 5709728926362275684}
-  - component: {fileID: 5898911430238102873}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -325,18 +325,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5898911430238102873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5709728926362275682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec05233a3bb117140b878a00a06e5cc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5709728926378866737
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,8 +624,8 @@ MonoBehaviour:
   cost: 200
   projectileDamage: 2
   projectilePierce: 2
-  projectileSpeed: 15
-  projectileDespawnTime: 1
+  projectileSpeed: 12
+  projectileDespawnTime: 0.3
 --- !u!1 &7987978154158140547
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8106b364de58c349a4b12a77e1265ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: 
   canUpgrade: 1
   opPath: {fileID: 1434278414171720795}
   upgrades:
@@ -754,7 +743,7 @@ MonoBehaviour:
     - 2.5
     - 2
     - 0
-    - 0
+    - 1
     projectile: {fileID: 0}
   - title: Midas Touch
     description: Unlocks the power of the golden dart
@@ -763,7 +752,7 @@ MonoBehaviour:
     stats:
     - 1
     - 5
-    - 4
     - 2
-    - 0
+    - 1
+    - 1
     projectile: {fileID: 4187673704971544680, guid: 8fe20f3cd4cc4ad488187a9bada64919, type: 3}

@@ -5,5 +5,7 @@ using UnityEngine;
 public enum Draggables
 {
     Monkey,
-    etc
+    BigTower,
+    Trebuchet,
+    Flamethrower
 }

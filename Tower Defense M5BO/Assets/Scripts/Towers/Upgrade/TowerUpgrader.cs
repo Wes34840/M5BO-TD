@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TowerUpgrader : MonoBehaviour
 {
+    [SerializeField] private string path;
     internal int tier = 0;
     private TowerStats stats;
     [SerializeField] internal bool canUpgrade = true;
@@ -41,7 +42,7 @@ public class TowerUpgrader : MonoBehaviour
         }
 
         tier++;
-
+        if (path != null) transform.parent.parent.GetComponentInChildren<Animator>().SetInteger(path, tier);
         transform.parent.parent.GetComponentInChildren<UpdateTowerRange>().UpdateRange();
     }
 

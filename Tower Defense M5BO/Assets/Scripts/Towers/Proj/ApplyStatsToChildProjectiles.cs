@@ -8,6 +8,7 @@ using UnityEngine.UIElements;
 public class ApplyStatsToChildProjectiles : MonoBehaviour
 {
     ProjectileStats stats;
+    [SerializeField] internal int angle;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,8 @@ public class ApplyStatsToChildProjectiles : MonoBehaviour
             ProjectileStats projectile = transform.GetChild(i).GetComponent<ProjectileStats>();
             ApplyProjectileStats(projectile);
 
-            Quaternion myRotation = Quaternion.AngleAxis(-10 + 10*i, transform.forward);
+
+            Quaternion myRotation = Quaternion.AngleAxis(-angle*Mathf.Round(transform.childCount/2) + angle * i, transform.forward);
             Vector3 result = myRotation * stats.direction;
 
             projectile.direction = result;

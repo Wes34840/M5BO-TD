@@ -11,7 +11,7 @@ public class DragNDrop : MonoBehaviour
     void Start()
     {
         check = GetComponentInChildren<checkFootPrint>();
-        isDragging = true;
+        GlobalData.isPlacing = true;
     }
 
     void Update()
@@ -22,11 +22,7 @@ public class DragNDrop : MonoBehaviour
     void DragAndDrop()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        if (isDragging)
-        {
-            transform.position = new Vector3(mousePosition.x, mousePosition.y, -1);
-        }
+        transform.position = new Vector3(mousePosition.x, mousePosition.y, -1);
 
         if (Input.GetMouseButtonUp(0) && check.isValid())
         {
@@ -38,5 +34,6 @@ public class DragNDrop : MonoBehaviour
         GlobalData.playerCash -= tower.transform.GetComponentInChildren<TowerStats>().cost;
         Instantiate(tower, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        GlobalData.isPlacing = false;
     }
 }

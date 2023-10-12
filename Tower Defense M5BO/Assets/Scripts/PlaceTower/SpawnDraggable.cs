@@ -13,7 +13,7 @@ public class SpawnDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        draggableSpawner.SpawnDraggable(towerType);
+        if (!GlobalData.isPlacing) draggableSpawner.SpawnDraggable(towerType);
     }
 
     public void OnDrag(PointerEventData eventData)
