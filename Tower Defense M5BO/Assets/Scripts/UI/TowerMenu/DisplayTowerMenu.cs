@@ -1,23 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Rendering;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DisplayTowerMenu : MonoBehaviour
 {
     public Image menuSprite;
-    public Sprite sprite;
     public GameObject[] pathDisplays;
+    [SerializeField] private Animator towerAnim;
     private void Start()
     {
         
     }
+    private void Update()
+    {
+        if (GlobalData.selectedTower != null && GlobalData.selectedTower.transform.GetChild(3).GetComponent<Animator>().GetBool("isFiring") == false)
+        {
+            menuSprite.sprite = GlobalData.selectedTower.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
+        }
+    }
+
     internal void UpdateDisplay()
     {
         GameObject tower = GlobalData.selectedTower;
-        sprite = tower.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
         menuSprite.sprite = tower.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
         StartCoroutine(DisplayAll(tower));
     }

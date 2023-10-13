@@ -15,10 +15,10 @@ public class DraggableRangeIndicator : MonoBehaviour
         switch (isValid)
         {
             case true:
-                GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0.3f);
+                sprite.color = new Color(0, 0, 0, 0.3f);
                 break;
             case false:
-                GetComponent<SpriteRenderer>().color = new Color(0.8f, 0, 0, 0.3f); 
+                sprite.color = new Color(0.8f, 0, 0, 0.3f); 
                 break;
         }
     }

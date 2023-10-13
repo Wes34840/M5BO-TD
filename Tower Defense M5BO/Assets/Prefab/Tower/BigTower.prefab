@@ -506,7 +506,7 @@ MonoBehaviour:
   upgrades:
   - title: Upgraded Armory
     description: New Weapons
-    cost: 200
+    cost: 350
     sprite: {fileID: 0}
     stats:
     - 0.25
@@ -517,7 +517,7 @@ MonoBehaviour:
     projectile: {fileID: 0}
   - title: Better Lookouts
     description: You hire new lookouts
-    cost: 400
+    cost: 800
     sprite: {fileID: 28336675, guid: 397de265ae98a5646886e7c932e025b9, type: 3}
     stats:
     - 0.5
@@ -526,9 +526,9 @@ MonoBehaviour:
     - 1
     - 0
     projectile: {fileID: 0}
-  - title: 
-    description: 
-    cost: 800
+  - title: Sharpening stations
+    description: Arrows become able to pierce the heavens
+    cost: 1250
     sprite: {fileID: -482256725, guid: 397de265ae98a5646886e7c932e025b9, type: 3}
     stats:
     - 0
@@ -587,7 +587,7 @@ MonoBehaviour:
   upgrades:
   - title: Faster Firing
     description: Shoots faster
-    cost: 200
+    cost: 300
     sprite: {fileID: 0}
     stats:
     - 0
@@ -598,7 +598,7 @@ MonoBehaviour:
     projectile: {fileID: 0}
   - title: Crossbows
     description: The tower now shoots crossbow bolts that deal more damage
-    cost: 700
+    cost: 750
     sprite: {fileID: 1332586042, guid: 397de265ae98a5646886e7c932e025b9, type: 3}
     stats:
     - 0
@@ -608,13 +608,13 @@ MonoBehaviour:
     - 0
     projectile: {fileID: 261341230619180537, guid: 52cf1603761a1504f8f25d78a4f6ee46, type: 3}
   - title: Storm of Arrows
-    description: Arrows are flying everywhere!
+    description: Bolts are flying everywhere!
     cost: 1500
     sprite: {fileID: -1185565270, guid: 397de265ae98a5646886e7c932e025b9, type: 3}
     stats:
     - 0
     - 13
-    - 0
+    - 6
     - 0
     - 0
     projectile: {fileID: 0}

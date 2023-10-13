@@ -12,12 +12,14 @@ public class ShootProjectile : MonoBehaviour
     private float firingDelay = 0;
     private Transform target;
     private UpdateLookDirection lookDir;
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         towerStats = GetComponentInChildren<TowerStats>();
         targetScript = GetComponentInChildren<TargetScript>();
         lookDir = GetComponentInChildren<UpdateLookDirection>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class ShootProjectile : MonoBehaviour
         ApplyProjectileStats(projectileStats, dir);
 
         if (lookDir != null) lookDir.UpdateDirection(target.position);
+        if (anim != null) anim.SetBool("isFiring", true);
     }
     private void ApplyProjectileStats(ProjectileStats p, Vector3 dir)
     {
