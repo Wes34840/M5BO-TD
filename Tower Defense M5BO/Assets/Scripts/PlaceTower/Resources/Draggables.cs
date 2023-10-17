@@ -6,6 +6,6 @@ public enum Draggables
 {
     Monkey,
     BigTower,
-    Trebuchet,
+    Bomb,
     Flamethrower
 }

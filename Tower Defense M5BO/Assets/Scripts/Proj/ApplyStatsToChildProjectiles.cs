@@ -18,7 +18,6 @@ public class ApplyStatsToChildProjectiles : MonoBehaviour
             ProjectileStats projectile = transform.GetChild(i).GetComponent<ProjectileStats>();
             ApplyProjectileStats(projectile);
 
-
             Quaternion myRotation = Quaternion.AngleAxis(-angle*Mathf.Round(transform.childCount/2) + angle * i, transform.forward);
             Vector3 result = myRotation * stats.direction;
 

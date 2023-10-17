@@ -23,5 +23,9 @@ public class AOEDoDamage : MonoBehaviour
                 GlobalData.playerCash += stats.damage;
             }
         }
+        if (GetComponent<SpawnClusterBombs>() != null)
+        {
+            GetComponent<SpawnClusterBombs>().SpawnCluster();
+        }
     }
 }

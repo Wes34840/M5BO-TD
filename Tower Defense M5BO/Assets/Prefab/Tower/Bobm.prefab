@@ -48,36 +48,36 @@ MonoBehaviour:
   canUpgrade: 1
   opPath: {fileID: 783078188442380622}
   upgrades:
-  - title: 
-    description: 
-    cost: 100
+  - title: Faster Firing
+    description: Straight Forward
+    cost: 400
     sprite: {fileID: 0}
     stats:
-    - 1
+    - 0
+    - 2
     - 0
     - 0
-    - 1
     - 0
     projectile: {fileID: 0}
-  - title: 
-    description: 
-    cost: 500
+  - title: Cluster Munitions
+    description: What are they gonna do, Send us to the hague?
+    cost: 1500
     sprite: {fileID: 555158851, guid: fa61e5872840e1d408d326e7bee08ca1, type: 3}
     stats:
-    - 1
     - 0
-    - 1
+    - 3
     - 0
     - 0
-    projectile: {fileID: 0}
-  - title: 
-    description: 
+    - 0
+    projectile: {fileID: 4187673704971544680, guid: 31949096f2086c04db7c0225b7820d13, type: 3}
+  - title: Disregard the Geveva Convention
+    description: Did you say Geneva Suggestion?
     cost: 1000
     sprite: {fileID: -844824546, guid: fa61e5872840e1d408d326e7bee08ca1, type: 3}
     stats:
     - 0
-    - 2
-    - 2
+    - 5
+    - 10
     - 0
     - 0
     projectile: {fileID: 0}
@@ -106,8 +106,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2287002326841866991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1344448, y: 1.1486255, z: 1.1344448}
+  m_LocalPosition: {x: 0.01, y: 0, z: 0}
+  m_LocalScale: {x: 1.8234063, y: 1.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5709728926362275685}
@@ -666,13 +666,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f50c2ad7cd78eb48b666dfff0e4b5fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
+  range: 3.5
   firingSpeed: 5
-  cost: 200
-  projectileDamage: 2
-  projectilePierce: 2
-  projectileSpeed: 12
-  projectileDespawnTime: 0.3
+  cost: 700
+  projectileDamage: 5
+  projectilePierce: 40
+  projectileSpeed: 10
+  projectileDespawnTime: 0.4
 --- !u!1 &7987978154158140547
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,36 +770,36 @@ MonoBehaviour:
   canUpgrade: 1
   opPath: {fileID: 1434278414171720795}
   upgrades:
-  - title: 
-    description: 
-    cost: 200
+  - title: Long Range Bombs
+    description: Shoot further
+    cost: 350
     sprite: {fileID: 0}
     stats:
     - 1
-    - 2.5
     - 0
-    - 1
+    - 0
+    - 0
     - 0
     projectile: {fileID: 0}
-  - title: 
-    description: 
-    cost: 400
+  - title: 'Plasma Bombs '
+    description: Yej
+    cost: 1200
     sprite: {fileID: -767672732, guid: fa61e5872840e1d408d326e7bee08ca1, type: 3}
     stats:
     - 0
-    - 2.5
-    - 2
     - 0
-    - 1
-    projectile: {fileID: 0}
-  - title: 
-    description: 
-    cost: 800
+    - 15
+    - 0
+    - 0
+    projectile: {fileID: 4187673704971544680, guid: 7f1a27f9bfd2e9a45bc70455639b4491, type: 3}
+  - title: Legalize Nuclear Bombs
+    description: Swag Messiah
+    cost: 3000
     sprite: {fileID: 859430233, guid: fa61e5872840e1d408d326e7bee08ca1, type: 3}
     stats:
     - 1
-    - 5
-    - 2
+    - 3
+    - 30
     - 1
     - 1
     projectile: {fileID: 0}

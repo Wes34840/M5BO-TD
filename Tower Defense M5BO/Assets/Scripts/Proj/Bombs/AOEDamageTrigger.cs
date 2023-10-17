@@ -19,6 +19,7 @@ public class AOEDamageTrigger : MonoBehaviour
             hasHit = true;
             Destroy(gameObject);
             aoeScript.DealDamage(stats);
+            GetComponent<PlayExplosionEffect>().PlayEffect();
         }
     }
 }
