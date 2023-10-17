@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class UpdateLookDirection : MonoBehaviour
 {
-
     public void UpdateDirection(Vector3 target)
     {
         Vector3 newLookAt = target - transform.position;

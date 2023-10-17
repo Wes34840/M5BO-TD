@@ -14,6 +14,7 @@ public class FollowPath : MonoBehaviour
         stats = GetComponent<EnemyStats>();
         pathScript = GameObject.Find("Path").GetComponent<Nodes>();
         lookDir = GetComponent<UpdateLookDirection>();
+        lookDir.UpdateDirection(pathScript.pathNodes[nodeIndex].position);
     }
 
     // Update is called once per frame

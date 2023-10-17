@@ -42,7 +42,7 @@ public class TowerUpgrader : MonoBehaviour
         }
 
         tier++;
-        if (path != null) transform.parent.parent.GetComponentInChildren<Animator>().SetInteger(path, tier);
+        if (path != "") transform.parent.parent.GetComponentInChildren<Animator>().SetInteger(path, tier);
         transform.parent.parent.GetComponentInChildren<UpdateTowerRange>().UpdateRange();
     }
 

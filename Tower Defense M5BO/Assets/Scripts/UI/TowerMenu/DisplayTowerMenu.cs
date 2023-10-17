@@ -16,9 +16,13 @@ public class DisplayTowerMenu : MonoBehaviour
     }
     private void Update()
     {
-        if (GlobalData.selectedTower != null && GlobalData.selectedTower.transform.GetChild(3).GetComponent<Animator>().GetBool("isFiring") == false)
+        if (GlobalData.selectedTower != null )
         {
-            menuSprite.sprite = GlobalData.selectedTower.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
+            Animator anim = GlobalData.selectedTower.transform.GetChild(3).GetComponent<Animator>();
+            if (anim != null && !anim.GetBool("isFiring"))
+            { 
+                menuSprite.sprite = GlobalData.selectedTower.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
+            }
         }
     }
 
