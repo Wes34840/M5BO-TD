@@ -6,7 +6,7 @@ public class EnemyExitScript : MonoBehaviour
 {
     private bool playerIsDead;
     public List<GameObject> objects = new List<GameObject>();
-    [SerializeField] private KillPlayer killPlayer;
+    [SerializeField] private EndScreen killPlayer;
     void Update()
     {
         if (objects.Count == 0)
@@ -26,7 +26,7 @@ public class EnemyExitScript : MonoBehaviour
         Debug.Log("removed");
         GlobalData.playerHealth -= enemy.GetComponent<EnemyStats>().health;
         Destroy(enemy);
-        if (CheckIfDead() && !playerIsDead) KillPlayer();
+        if (CheckIfDead() && !playerIsDead && GlobalData.gameIsActive) KillPlayer();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,7 +41,7 @@ public class EnemyExitScript : MonoBehaviour
     }
 
     private void KillPlayer()
-    {
+    { 
         playerIsDead = true;
         GlobalData.gameIsActive = false;
         killPlayer.Defeat();

@@ -7,6 +7,8 @@ public class WaveHolder : MonoBehaviour
     public LoadWaveJSON JSONLoader;
     public List<WaveStructure> waves;
 
+    [SerializeField] EndScreen endScreen;
+
     [SerializeField] private WaveSpawner spawner;
 
     [SerializeField] internal int waveIndex;
@@ -30,5 +32,14 @@ public class WaveHolder : MonoBehaviour
     {
         waveIsActive = false;
         GlobalData.playerCash += waves[waveIndex].endCash;
+        if (waveIndex == waves.Count && GlobalData.gameIsActive)
+        {
+            WinGame();
+        }
+
+    }
+    private void WinGame()
+    {
+        endScreen.Victory();
     }
 }

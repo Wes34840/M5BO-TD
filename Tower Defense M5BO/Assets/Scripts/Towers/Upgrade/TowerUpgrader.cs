@@ -34,12 +34,13 @@ public class TowerUpgrader : MonoBehaviour
             ApplySprite(upgrades[tier].sprite);
         }
 
-        ApplyStats(upgrades[tier].stats);
+        ApplyStats(upgrades[tier].stats, upgrades[tier].cost);
 
         if (upgrades[tier].projectile != null)
         {
             ApplyProjectile(upgrades[tier].projectile);
         }
+
 
         tier++;
         if (path != "") transform.parent.parent.GetComponentInChildren<Animator>().SetInteger(path, tier);
@@ -50,14 +51,15 @@ public class TowerUpgrader : MonoBehaviour
     {
         transform.parent.parent.GetChild(3).GetComponent<SpriteRenderer>().sprite = sprite;
     }
-    
-    private void ApplyStats(float[] newStats)
+
+    private void ApplyStats(float[] newStats, float cost)
     {
         stats.range += newStats[(int)StatEnum.range];
         stats.firingSpeed += newStats[(int)StatEnum.firingSpeed];
         stats.projectileDamage += newStats[(int)StatEnum.projDamage];
         stats.projectilePierce += newStats[(int)StatEnum.projPierce];
         stats.projectileSpeed += newStats[(int)StatEnum.projSpeed];
+        stats.cost += cost;
     }
 
     private void ApplyProjectile(GameObject proj)

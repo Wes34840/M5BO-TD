@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class DisplayTowerMenu : MonoBehaviour
 {
     public Image menuSprite;
     public GameObject[] pathDisplays;
+    public GameObject sellPrice;
     [SerializeField] private Animator towerAnim;
     private void Start()
     {
@@ -39,6 +41,7 @@ public class DisplayTowerMenu : MonoBehaviour
         UpdateButtons(tower);
         UpdateTextFields(tower);
         UpdateSliders(tower);
+        UpdateSellPrice(tower);
     }
 
     private void UpdateButtons(GameObject tower)
@@ -85,5 +88,11 @@ public class DisplayTowerMenu : MonoBehaviour
             pathDisplays[i].transform.GetComponentInChildren<UpdateProgSlider>().UpdateSlider(tower, i);
 
         }
+    }
+
+    private void UpdateSellPrice(GameObject tower)
+    {
+        float totalPrice = tower.GetComponent<TowerStats>().cost;
+        sellPrice.GetComponent<UpdateTowerSellPrice>().UpdateText(Mathf.Round(totalPrice*0.7f));
     }
 }

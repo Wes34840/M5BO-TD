@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 943785244485316529}
   - component: {fileID: 943785244485316530}
   - component: {fileID: 7841906979252587644}
+  - component: {fileID: -7540737692318414311}
   m_Layer: 0
   m_Name: BigTower
   m_TagString: Untagged
@@ -407,6 +408,18 @@ MonoBehaviour:
   projectilePierce: 1
   projectileSpeed: 20
   projectileDespawnTime: 0.15
+--- !u!114 &-7540737692318414311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943785244485316535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa83220725a74b14ea40e6d962871bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3242319429331635126
 GameObject:
   m_ObjectHideFlags: 0
