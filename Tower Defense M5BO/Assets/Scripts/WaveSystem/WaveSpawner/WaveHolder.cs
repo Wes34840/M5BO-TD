@@ -10,7 +10,7 @@ public class WaveHolder : MonoBehaviour
     [SerializeField] EndScreen endScreen;
 
     [SerializeField] private WaveSpawner spawner;
-
+    private ToggleFFButton toggleFF;
     [SerializeField] internal int waveIndex;
     [SerializeField] internal bool waveIsActive;
     private void Start()
@@ -18,6 +18,7 @@ public class WaveHolder : MonoBehaviour
         spawner = GetComponent<WaveSpawner>();
         JSONLoader = GetComponent<LoadWaveJSON>();
         waves = JSONLoader.LoadWave();
+        toggleFF = GetComponent<ToggleFFButton>();
     }
 
     internal void StartWave()
@@ -25,12 +26,14 @@ public class WaveHolder : MonoBehaviour
         waveIndex++;
         waveIsActive = true;
         WaveStructure wave = waves[waveIndex];
+        toggleFF.ToggleOn();
         spawner.InitWave(wave);
     }
 
     internal void FinishWave()
     {
         waveIsActive = false;
+        toggleFF.ToggleOff();
         GlobalData.playerCash += waves[waveIndex].endCash;
         if (waveIndex == waves.Count && GlobalData.gameIsActive)
         {

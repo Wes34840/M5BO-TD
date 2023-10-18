@@ -18,12 +18,15 @@ public class DisplayTowerMenu : MonoBehaviour
     }
     private void Update()
     {
-        if (GlobalData.selectedTower != null )
+        if (GlobalData.selectedTower != null)
         {
             Animator anim = GlobalData.selectedTower.transform.GetChild(3).GetComponent<Animator>();
-            if (anim != null && !anim.GetBool("isFiring"))
+            if (anim != null)
             { 
-                menuSprite.sprite = GlobalData.selectedTower.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
+                if (!anim.GetBool("isFiring"))
+                {
+                    menuSprite.sprite = GlobalData.selectedTower.transform.GetChild(3).GetComponent<SpriteRenderer>().sprite;
+                } // nesting spam lmfaoooooo
             }
         }
     }

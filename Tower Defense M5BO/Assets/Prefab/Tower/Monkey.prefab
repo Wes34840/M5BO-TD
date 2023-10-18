@@ -626,7 +626,7 @@ MonoBehaviour:
   projectileDamage: 2
   projectilePierce: 2
   projectileSpeed: 12
-  projectileDespawnTime: 0.3
+  projectileDespawnTime: 0.4
 --- !u!114 &6731457718571190177
 MonoBehaviour:
   m_ObjectHideFlags: 0

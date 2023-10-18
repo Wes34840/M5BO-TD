@@ -56,7 +56,6 @@ public class WaveSpawner : MonoBehaviour
             delayUntilFinish += parts[i].spacing * parts[i].count / 10;
             delayUntilFinish += parts[i].delay / 10;
         }
-        Debug.Log(delayUntilFinish);
         yield return new WaitForSeconds(delayUntilFinish);
         finishedSpawning = true;
     }
