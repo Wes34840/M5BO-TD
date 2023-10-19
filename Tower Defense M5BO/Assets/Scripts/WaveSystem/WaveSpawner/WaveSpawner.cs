@@ -51,8 +51,6 @@ public class WaveSpawner : MonoBehaviour
     }
     internal bool hasFinished()
     {
-        Debug.Log(totalSpawned);
-        Debug.Log(totalEnemies);
         return totalSpawned == totalEnemies;
     }
 }
