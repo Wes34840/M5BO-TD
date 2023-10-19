@@ -14,6 +14,6 @@ public class EndScreen : MonoBehaviour
     internal void Victory()
     {
         GlobalData.gameIsActive = false;
-        VictoryScreen.GetComponent<Animator>().SetBool("PlayerIsDead", true);
+        VictoryScreen.GetComponent<Animator>().SetBool("TriggerEvent", true);
     }
 }

@@ -1,9 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+    internal float timeSinceStart;
     internal bool finishedSpawning = false;
     [SerializeField] private CurrentEnemies enemyHolder;
     internal EnemyDatabase enemyDatabase;
@@ -30,20 +30,20 @@ public class WaveSpawner : MonoBehaviour
 
     private IEnumerator SpawnWave(WavePart[] parts)
     {
+        StartCoroutine(FinishSpawning(parts));
         for (int i = 0; i < parts.Length; i++)
         {
             StartCoroutine(SpawnWavePart(parts[i]));
             yield return new WaitForSeconds(parts[i].delay / 10);
         }
-        StartCoroutine(FinishSpawning(parts));
-
     }
 
     private IEnumerator SpawnWavePart(WavePart part)
     {
         for (int i = 0; i < part.count; i++)
         {
-            yield return new WaitForSeconds(part.spacing/10);
+            yield return new WaitForSeconds(part.spacing / 10);
+            timeSinceStart += part.spacing/10;
             GameObject enemy = Instantiate(enemyDatabase.Enemies[(int)part.enemyID], spawnPoint.position, Quaternion.identity);
             enemyHolder.currentEnemies.Add(enemy);
         }
@@ -53,10 +53,12 @@ public class WaveSpawner : MonoBehaviour
         float delayUntilFinish = 0;
         for (int i = 0; i < parts.Length; i++)
         {
-            delayUntilFinish += parts[i].spacing * parts[i].count / 10;
-            delayUntilFinish += parts[i].delay / 10;
+            delayUntilFinish += (parts[i].spacing / 10) * parts[i].count;
+            if (parts[i].delay != 0) delayUntilFinish -= (parts[i].spacing / 10 * parts[i].count) - (parts[i].delay / 10);
         }
-        yield return new WaitForSeconds(delayUntilFinish);
+        yield return new WaitForSeconds(delayUntilFinish+0.5f);
         finishedSpawning = true;
+        enemyHolder.CheckIfFinished();
+        timeSinceStart = 0;
     }
 }

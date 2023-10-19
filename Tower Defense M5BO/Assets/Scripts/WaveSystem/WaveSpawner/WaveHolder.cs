@@ -35,7 +35,7 @@ public class WaveHolder : MonoBehaviour
         waveIsActive = false;
         toggleFF.ToggleOff();
         GlobalData.playerCash += waves[waveIndex].endCash;
-        if (waveIndex == waves.Count && GlobalData.gameIsActive)
+        if (waveIndex == waves.Count-1 && GlobalData.gameIsActive)
         {
             WinGame();
         }

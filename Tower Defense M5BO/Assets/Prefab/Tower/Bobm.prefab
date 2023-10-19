@@ -72,12 +72,12 @@ MonoBehaviour:
     projectile: {fileID: 4187673704971544680, guid: 31949096f2086c04db7c0225b7820d13, type: 3}
   - title: Disregard the Geveva Convention
     description: Did you say Geneva Suggestion?
-    cost: 1000
+    cost: 3000
     sprite: {fileID: -844824546, guid: fa61e5872840e1d408d326e7bee08ca1, type: 3}
     stats:
     - 0
+    - 0
     - 5
-    - 10
     - 0
     - 0
     projectile: {fileID: 0}
@@ -811,8 +811,8 @@ MonoBehaviour:
     sprite: {fileID: 859430233, guid: fa61e5872840e1d408d326e7bee08ca1, type: 3}
     stats:
     - 1
-    - 3
-    - 30
+    - 0
+    - 15
     - 1
     - 1
     projectile: {fileID: 0}

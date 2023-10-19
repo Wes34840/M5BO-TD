@@ -19,7 +19,7 @@ public class AOEDoDamage : MonoBehaviour
             if (stats.hasPierced < stats.pierce)
             {
                 stats.hasPierced++;
-                targets[i].GetComponent<EnemyStats>().health -= stats.damage;
+                if (targets[i] != null) targets[i].GetComponent<EnemyStats>().health -= stats.damage;
                 GlobalData.playerCash += stats.damage;
             }
         }

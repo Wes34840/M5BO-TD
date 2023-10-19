@@ -616,7 +616,7 @@ MonoBehaviour:
     stats:
     - 0
     - 5
-    - 2
+    - 1
     - 0
     - 0
     projectile: {fileID: 261341230619180537, guid: 52cf1603761a1504f8f25d78a4f6ee46, type: 3}

@@ -18,11 +18,10 @@ public class CurrentEnemies : MonoBehaviour
         currentEnemies.Remove(enemy);
         CheckIfFinished();
     }
-    private void CheckIfFinished()
+    internal void CheckIfFinished()
     {
         if (currentEnemies.Count == 0 && spawner.finishedSpawning)
         {
-
             GetComponentInParent<WaveHolder>().FinishWave();
         }
     }

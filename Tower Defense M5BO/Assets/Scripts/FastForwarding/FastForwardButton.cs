@@ -33,15 +33,13 @@ public class FastForwardButton : MonoBehaviour
         textField.text = $">>>";
         Time.timeScale = 2.0f;
         isActive = true;
-        Debug.Log("EnabledFF");
     }
 
     public void DisableFF()
     {
         textField.fontStyle = FontStyles.Normal;
-        textField.text = $">";
+        textField.text = $">>";
         Time.timeScale = 1.0f;
         isActive = false;
-        Debug.Log("DisabledFF");
     }
 }
