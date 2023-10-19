@@ -1,7 +1,10 @@
 # TowerDefenseTemplate
 
-This is my Tower Defense game, it is heavily inspired by Bloons Tower Defense 6, among others.
+This is my Tower Defense game, it is heavily inspired by Bloons Tower Defense 6 and a ROBLOX game I used to play like 3 years ago.
 It functions the same as well, placing towers to fight enemies, upgrading them to be more effective at fighting enemies, etc.
+
+[image](/Readme-Visuals/Basic.png)
+[image](/Readme-Visuals/Playing.png)
 
 ## Product 1: "DRY SRP Scripts op GitHub"
 
@@ -21,7 +24,7 @@ See Releases
 
 ## Product 4: Game met Sprites(animations) en Textures 
 
-![Temkstures](Readme-Visuals/SpriteShowcase.gif)
+[Temkstures](Readme-Visuals/SpriteShowcase.gif)
 
 ## Product 5: Issues met debug screenshots op GitHub 
 
