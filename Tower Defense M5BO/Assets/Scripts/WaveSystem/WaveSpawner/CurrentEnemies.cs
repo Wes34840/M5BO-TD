@@ -20,7 +20,8 @@ public class CurrentEnemies : MonoBehaviour
     }
     internal void CheckIfFinished()
     {
-        if (currentEnemies.Count == 0 && spawner.finishedSpawning)
+        Debug.Log(spawner.hasFinished());
+        if (currentEnemies.Count == 0 && spawner.hasFinished())
         {
             GetComponentInParent<WaveHolder>().FinishWave();
         }

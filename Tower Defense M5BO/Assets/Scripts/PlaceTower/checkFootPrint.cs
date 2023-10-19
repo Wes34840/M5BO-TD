@@ -26,12 +26,11 @@ public class checkFootPrint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("RangeColl") || collision.CompareTag("SelectBox"))
+        if (collision.CompareTag("FootPrint"))
         {
-            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), collision);
+            obj.Add(collision.gameObject);
+            range.ChangeColor(isValid());
         }
-        obj.Add(collision.gameObject);
-        range.ChangeColor(isValid());
     }
 
     private void OnTriggerExit2D(Collider2D collision)
