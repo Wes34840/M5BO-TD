@@ -13,7 +13,6 @@ public class EnemyExitScript : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Called");
         Vector2 dist = objects[0].transform.position - transform.position;
         if (dist.magnitude <= 0.1)
         {
@@ -23,9 +22,8 @@ public class EnemyExitScript : MonoBehaviour
     private void ExitEnemy(GameObject enemy)
     {
         objects.Remove(enemy);
-        Debug.Log("removed");
         GlobalData.playerHealth -= enemy.GetComponent<EnemyStats>().health;
-        Destroy(enemy);
+        enemy.GetComponent<RemoveOnDeath>().RemoveEnemy();
         if (CheckIfDead() && !playerIsDead && GlobalData.gameIsActive) KillPlayer();
     }
 

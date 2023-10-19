@@ -29,6 +29,6 @@ public class FollowPath : MonoBehaviour
         }
         delta.Normalize();
         transform.position += delta * (stats.moveSpeed/10) * Time.deltaTime;
-        stats.progress += Time.deltaTime;
+        stats.progress += Time.deltaTime * stats.moveSpeed;
     }
 }

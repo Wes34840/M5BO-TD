@@ -16,13 +16,18 @@ public class RemoveOnDeath : MonoBehaviour
         if (stats.health <= 0 && !isDead)
         {
             isDead = true;
-            GameObject.Find("EnemyHandler").GetComponent<CurrentEnemies>().RemoveEnemyFromList(gameObject);
-            GlobalData.playerCash += stats.health; // prevent player from getting too much money from an attack,
-                                                   // for example: if an enemy has 3 health and takes 4 damage,
-                                                   // player is granted 4 cash but this takes away the excess cash
-                                                   // (or at least, it should)
-            Destroy(gameObject);
-            GetComponentInChildren<ShowEnemyHealth>().ClosePopup();
+            RemoveEnemy();
         }
+    }
+
+    internal void RemoveEnemy()
+    {
+        GameObject.Find("EnemyHandler").GetComponent<CurrentEnemies>().RemoveEnemyFromList(gameObject);
+        GlobalData.playerCash += stats.health; // prevent player from getting too much money from an attack,
+                                               // for example: if an enemy has 3 health and takes 4 damage,
+                                               // player is granted 4 cash but this takes away the excess cash
+                                               // (or at least, it should)
+        Destroy(gameObject);
+        GetComponentInChildren<ShowEnemyHealth>().ClosePopup();
     }
 }
