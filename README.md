@@ -40,7 +40,7 @@ See Releases
 
 ## Product 8: Prototype test video
 
-TBA.
+![Link to trailer](https://youtu.be/GIvBkyaUo_w)
 
 ## Product 9: SCRUM planning inschatting 
 
