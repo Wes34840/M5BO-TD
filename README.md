@@ -1,6 +1,6 @@
 # TowerDefenseTemplate
 
-This is my Tower Defense game, it is heavily inspired by Bloons Tower Defense 6 and a ROBLOX game I used to play like 3 years ago.
+This is my Tower Defense game, it is heavily inspired by Bloons Tower Defense 6 and a ROBLOX game I used to play like 3 years ago. <br>
 It functions the same as well, placing towers to fight enemies, upgrading them to be more effective at fighting enemies, etc.
 
 ![image](/Readme-Visuals/Basic.png)
@@ -8,8 +8,8 @@ It functions the same as well, placing towers to fight enemies, upgrading them t
 
 ## Product 1: "DRY SRP Scripts op GitHub"
 
-This script gets all the wave data from the JSON, then sends the right wave data to the spawner that spawns all the enemies it is given, this conforms to the SRP development principle
-[Link to sender](/Tower%20Defense%20M5BO/Assets/Scripts/WaveSystem/WaveSpawner/WaveHolder.cs)
+This script gets all the wave data from the JSON, then sends the right wave data to the spawner that spawns all the enemies it is given, this conforms to the SRP development principle<br>
+[Link to sender](/Tower%20Defense%20M5BO/Assets/Scripts/WaveSystem/WaveSpawner/WaveHolder.cs)<br>
 [Link to reciever/spawner](/Tower%20Defense%20M5BO/Assets/Scripts/WaveSystem/WaveSpawner/WaveSpawner.cs)
 
 The sender itself also conforms to the DRY principle, as it uses arrays 
