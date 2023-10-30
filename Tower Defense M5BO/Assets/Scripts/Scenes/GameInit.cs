@@ -6,7 +6,7 @@ public class GameInit : MonoBehaviour
 {
     void Start()
     {
-        GlobalData.playerCash = 650f;
+        GlobalData.playerCash = 100000;
         GlobalData.playerHealth = 100f;
         GlobalData.gameIsActive = true;
         GlobalData.menuIsOpen = false;

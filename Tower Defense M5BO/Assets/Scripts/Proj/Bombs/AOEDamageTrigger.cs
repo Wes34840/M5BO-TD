@@ -20,6 +20,7 @@ public class AOEDamageTrigger : MonoBehaviour
             Destroy(gameObject);
             aoeScript.DealDamage(stats);
             GetComponent<PlayExplosionEffect>().PlayEffect();
+            GetComponent<SpawnAudioSource>().SpawnAudio();
         }
     }
 }
