@@ -119,7 +119,7 @@ MonoBehaviour:
   enemyName: Slow
   moveSpeed: 8
   maxHealth: 16
-  health: 8
+  health: 16
   progress: 0
 --- !u!114 &392236444271048453
 MonoBehaviour:

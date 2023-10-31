@@ -8,5 +8,9 @@ public enum EnemyID
     Basic,
     Fast,
     Slow,
-    Boss1
+    Boss1,
+    Strong,
+    Boss2,
+    Bolt,
+    FastBoss
 }

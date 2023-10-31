@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6681549550203249722}
   - component: {fileID: 1842703743822094202}
   - component: {fileID: 2057636997182118779}
+  - component: {fileID: 4589026726627629764}
   m_Layer: 0
   m_Name: BombCluster
   m_TagString: Untagged
@@ -167,6 +168,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosion: {fileID: 5678362879958376700, guid: 7b1801cd2ad06ad4ba11171dfd8335c7, type: 3}
+--- !u!114 &4589026726627629764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4187673704971544680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd3131a10298a44bb6fb119b0b915c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 551421696920821477, guid: a854b180d10dcde46ba61fa28badd142, type: 3}
+  clip: {fileID: 8300000, guid: 2695098c5e572514c980bb2250a40793, type: 3}
 --- !u!1 &8840295787369005394
 GameObject:
   m_ObjectHideFlags: 0
