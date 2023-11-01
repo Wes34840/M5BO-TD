@@ -308,7 +308,7 @@
                 {
                     "enemyID": 6,
                     "count": 2,
-                    "spacing": 15,
+                    "spacing": 30,
                     "delay": 40
                 },
                 {
@@ -360,13 +360,13 @@
                 {
                     "enemyID": 6,
                     "count": 5,
-                    "spacing": 10,
+                    "spacing": 30,
                     "delay": 40
                 },
                 {
                     "enemyID": 7,
                     "count": 15,
-                    "spacing": 5,
+                    "spacing": 8,
                     "delay": 0
                 }
                 
@@ -380,8 +380,8 @@
             [
                 {
                     "enemyID": 6,
-                    "count": 8,
-                    "spacing": 10,
+                    "count": 10,
+                    "spacing": 30,
                     "delay": 5
                 },
                 {
@@ -393,7 +393,7 @@
                 {
                     "enemyID": 4,
                     "count": 20,
-                    "spacing": 5,
+                    "spacing": 10,
                     "delay": 0
                 }
                 
