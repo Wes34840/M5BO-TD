@@ -7,6 +7,6 @@ public class GlobalData
     internal static float playerHealth;
     internal static float playerCash;
     internal static GameObject selectedTower, selectedEnemy;
-    internal static bool menuIsOpen, isPlacing;
+    internal static bool menuIsOpen, isPlacing, autoStart, optionsIsOpen;
     internal static bool gameIsActive = true;
 }

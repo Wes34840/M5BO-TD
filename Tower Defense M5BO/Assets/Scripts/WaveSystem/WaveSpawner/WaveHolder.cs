@@ -38,6 +38,11 @@ public class WaveHolder : MonoBehaviour
         if (waveIndex == waves.Count-1 && GlobalData.gameIsActive)
         {
             WinGame();
+            return;
+        }
+        if (GlobalData.autoStart)
+        {
+            StartWave();
         }
 
     }

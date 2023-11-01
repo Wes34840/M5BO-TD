@@ -17,6 +17,11 @@ public class DragNDrop : MonoBehaviour
     void Update()
     {
         DragAndDrop();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Destroy(gameObject);
+            GlobalData.isPlacing = false;
+        } // real lazy way to implement hotkeys, but I am not fucking with the new input manager again
     }
 
     void DragAndDrop()
